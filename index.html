@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Igor Simões Fugiwara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Igor Simões Fugiwara</h1>
+            <ul class="social-icons">
+                <li><a href="https://www.linkedin.com/in/igor-sim%C3%B5es-fugiwara-2283b2205/" target="_blank"><i
+                            class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/igorsfugiwara" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li><a href="#" id="contact-icon"><i class="fas fa-phone"></i></a></li>
+                <div id="contact-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>Telefone: <span id="phone">11 94328-6969</span> <button id="copy-phone"><i class="far fa-copy"></i></button></p>
+                        <p>Email: <span id="email">igosf.dev@gmail.com</span> <button id="copy-email"><i class="far fa-copy"></i></button></p>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <svg id="svg-animation" width="100%" height="200">
+            <!-- SVG animation will go here -->
+        </svg>
+    </section>
+    <section class="about">
+        <h2>Sobre Mim</h2>
+        <div class="flex-col">
+            <img src="assets/img.png" alt="Igor Simões Fugiwara" class="profile-photo">
+            <p>Desenvolvedor front-end com 2 anos de experiência no UOL, especializado em Vue.js e React. Fluente em
+                inglês,
+                formado em Sistemas para Internet pela FIAP, com destaque na elaboração de aplicativos inovadores.
+                Reconhecido por premiado projeto de mobilidade urbana e startup focada em gamificação em hortas urbanas.
+                Apaixonado por projetos pessoais que ampliam os limites da criatividade e da tecnologia.</p>
+        </div>
+    </section>
+    <section class="projects">
+        <h2>Projetos</h2>
+        <ul>
+            <a href="https://aldeiaensaio-medidor.netlify.app/" target="_blank">
+                <li>
+                    Medidor de Anel
+                    <p>Ferramenta digital para medição de anéis, trazendo uma solução prática e acessível.</p>
+                </li>
+            </a>
+            <a href="https://poke-trunfo.netlify.app/" target="_blank">
+                <li>
+                    Poke Trunfo
+                    <p>Jogo estilo super trunfo utilizando JavaScript vanilla e uma API de acesso público, para os
+                        amantes de Pokémon.</p>
+                </li>
+            </a>
+            <a href="https://ivanzagatti.netlify.app/" target="_blank">
+                <li>
+                    Landing Page - Ivan Zagatti
+                    <p>Landing page criada para divulgação e sistema de reserva integrado ao email do restaurante.</p>
+                </li>
+            </a>
+            <a href="https://escombro-epk23.netlify.app/" target="_blank">
+                <li>
+                    Eletronic Press Kit - Escombro
+                    <p>EPK feito com o intuito de centralizar informações para venda de shows</p>
+                </li>
+            </a>
+        </ul>
+    </section>
+    <section class="skills">
+        <h2>Competências</h2>
+        <ul>
+            <li>
+                <i class="fab fa-vuejs vue-icon"></i> Vue.js
+            </li>
+            <li>
+                <i class="fab fa-html5 html-icon"></i> HTML5
+            </li>
+            <li>
+                <i class="fab fa-css3-alt css-icon"></i> CSS3
+            </li>
+            <li>
+                <i class="fab fa-js js-icon"></i> JavaScript
+            </li>
+            <li>
+                <i class="fab fa-react react-icon"></i> React
+            </li>
+            <li><i class="fas fa-mobile-alt" style="color: #000;"></i> Desenvolvimento Web Responsivo</li>
+            <li>UI/UX Design</li>
+            <li><i class="fab fa-github" style="color: #4078c0;"></i> Git / GitHub</li>
+            <li>Metodologias Ágeis (Scrum)</li>
+            <li><img src="assets/us.svg"></img> Inglês Fluente</li>
+            <li><img src="assets/es.svg"></img> Espanhol Básico</li>
+            <li><img src="assets/br.svg"></img> Portugûes Lingua Nativa</li>
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; 2024 Igor Simões Fugiwara</p>
+        <ul class="social-icons">
+            <li><a href="https://www.linkedin.com/in/igor-sim%C3%B5es-fugiwara-2283b2205/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/igorsfugiwara" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li><a href="#" id="footer-contact-icon"><i class="fas fa-phone"></i></a></li>
+        </ul>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
