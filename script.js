@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const svgNS = "http://www.w3.org/2000/svg";
     const svg = document.getElementById("svg-animation");
-    const text = "Front-end eveloper";
+    const text = "Front-end Developer";
 
     let textElement = document.createElementNS(svgNS, "text");
     textElement.setAttribute("x", "50%");
