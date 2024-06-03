@@ -78,9 +78,10 @@ nav h1 {
     display: flex;
     text-decoration: none;
     list-style: none;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 0;
     margin: 0 auto;
+    gap: 10px;
 }
 i {
     color: #FFF;
@@ -98,14 +99,14 @@ footer {
 
 .projects a:hover li {
     color: #FFF;
-    transition: all .3s ease-in-out;
+    transition: all .2s ease-in-out;
     background-color: rgb(3, 3, 3);
 }
 
 /* Estilos para os itens da competência */
 .skills li {
     margin-bottom: 10px;
-    transition: all 0.3s ease; /* Transição suave */
+    transition: all 0.2s ease; /* Transição suave */
 }
 
 /* Efeito de hover */
@@ -202,6 +203,11 @@ footer {
     .flex-col {
         display: flex;
         gap: 2em;
+    }
+
+    .flex-col p {
+        display: flex;
+    align-items: center;
     }
 }
 
