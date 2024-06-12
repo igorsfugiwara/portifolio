@@ -1,3 +1,4 @@
+// Função para alternar entre os modos claro e escuro
 function toggleTheme() {
     const body = document.body;
     const themeToggle = document.getElementById('theme-toggle');
@@ -10,39 +11,27 @@ function toggleTheme() {
         icon.classList.replace('fa-moon', 'fa-sun');
         text.textContent = 'Modo Claro';
         textElement.style.stroke = 'black'; // Mudar cor da animação para preto no modo claro
-        localStorage.setItem('theme', 'light'); // Salvar preferência do tema
     } else {
         body.classList.replace('light-mode', 'dark-mode');
         icon.classList.replace('fa-sun', 'fa-moon');
         text.textContent = 'Modo Escuro';
         textElement.style.stroke = 'white'; // Mudar cor da animação para branco no modo escuro
-        localStorage.setItem('theme', 'dark'); // Salvar preferência do tema
     }
 }
 
+// Evento de clique no botão de alternar tema
 document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 
-// Inicialização do tema com base na preferência do sistema ou tema salvo
-document.addEventListener('DOMContentLoaded', function () {
-    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const storedTheme = localStorage.getItem('theme');
-    const textElement = document.querySelector('#svg-animation text');
-
-    if (storedTheme === 'dark' || (storedTheme !== 'light' && userPrefersDark)) {
-        document.body.classList.add('dark-mode');
-        document.querySelector('#theme-toggle i').classList.replace('fa-sun', 'fa-moon');
-        document.getElementById('theme-text').textContent = 'Modo Escuro';
-        textElement.style.stroke = 'white';
-        isDarkMode();
-    } else {
-        document.body.classList.add('light-mode');
-        document.querySelector('#theme-toggle i').classList.replace('fa-moon', 'fa-sun');
-        document.getElementById('theme-text').textContent = 'Modo Claro';
-        textElement.style.stroke = 'black';
+// Função para verificar se deve aplicar estilo de modo escuro ao carregar a página
+function isDarkMode() {
+    if (document.body.classList.contains('dark-mode')) {
+        document.getElementById('svg-animation').childNodes[3].style.stroke = "white";
     }
-});
-// Configuração inicial para o tema claro
+}
+
+// Event listener para chamar isDarkMode() após o carregamento completo da página
 document.addEventListener('DOMContentLoaded', function () {
+    // Inicialização da página com tema claro
     document.body.classList.add('light-mode');
     document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 
@@ -98,6 +87,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     animateText();
+
+    // Verificar e aplicar o estilo de modo escuro ao carregar a página
+    isDarkMode();
 });
 
 // Abrir modal ao clicar no ícone de telefone

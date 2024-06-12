@@ -38,7 +38,7 @@
                         "default_language": "pt",
                         "native_language_names": true,
                         "detect_browser_language": true,
-                        "languages": ["pt", "fr", "de", "it", "es", "en"],
+                        "languages": ["pt", "en", "es", "de", "fr", "it"],
                         "wrapper_selector": ".gtranslate_wrapper",
                         "flag_size": 24,
                         "switcher_horizontal_position": "inline",
@@ -169,10 +169,12 @@
         document.addEventListener('scroll', toggleButtonsVisibility);
     </script>
     <script>
+        function isDarkMode() {
             if (document.querySelector('.dark-mode')) {
                 document.getElementById('svg-animation').childNodes[3].style.stroke = "white"
-                console.log(document.getElementById('svg-animation').childNodes[3].style.stroke);
             }
+        }
+        isDarkMode();
     </script>
 </body>
 
