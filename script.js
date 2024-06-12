@@ -155,4 +155,4 @@ function isDarkMode() {
         console.log(document.getElementById('svg-animation').childNodes[3].style.stroke);
     }
 }
-isDarkMode() ;
+isDarkMode();
