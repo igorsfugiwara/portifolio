@@ -144,31 +144,35 @@
     </footer>
     <script src="script.js"></script>
     <script>
+        // Função para verificar a posição do scroll e aplicar animações nos botões de modo escuro e tradução
+        function toggleButtonsVisibility() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const translateToggle = document.querySelector('.gtranslate_wrapper');
 
+            // Verificar se a posição do scroll é maior que 0 (não está no topo)
+            if (window.scrollY > 0) {
+                // Se não estiver no topo, aplicar a animação de fade-out nos botões
+                themeToggle.style.transition = 'opacity 0.3s';
+                translateToggle.style.transition = 'opacity 0.3s';
+                themeToggle.style.opacity = 0;
+                translateToggle.style.opacity = 0;
+            } else {
+                // Se estiver no topo, aplicar a animação de fade-in nos botões
+                themeToggle.style.transition = 'opacity 0.3s';
+                translateToggle.style.transition = 'opacity 0.3s';
+                themeToggle.style.opacity = 1;
+                translateToggle.style.opacity = 1;
+            }
+        }
 
-// Função para verificar a posição do scroll e aplicar animações nos botões de modo escuro e tradução
-function toggleButtonsVisibility() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const translateToggle = document.querySelector('.gtranslate_wrapper');
-
-    // Verificar se a posição do scroll é maior que 0 (não está no topo)
-    if (window.scrollY > 0) {
-        // Se não estiver no topo, aplicar a animação de fade-out nos botões
-        themeToggle.style.transition = 'opacity 0.3s';
-        translateToggle.style.transition = 'opacity 0.3s';
-        themeToggle.style.opacity = 0;
-        translateToggle.style.opacity = 0;
-    } else {
-        // Se estiver no topo, aplicar a animação de fade-in nos botões
-        themeToggle.style.transition = 'opacity 0.3s';
-        translateToggle.style.transition = 'opacity 0.3s';
-        themeToggle.style.opacity = 1;
-        translateToggle.style.opacity = 1;
-    }
-}
-
-// Adicionar um evento de rolagem à página para chamar a função toggleButtonsVisibility()
-document.addEventListener('scroll', toggleButtonsVisibility);
+        // Adicionar um evento de rolagem à página para chamar a função toggleButtonsVisibility()
+        document.addEventListener('scroll', toggleButtonsVisibility);
+    </script>
+    <script>
+            if (document.querySelector('.dark-mode')) {
+                document.getElementById('svg-animation').childNodes[3].style.stroke = "white"
+                console.log(document.getElementById('svg-animation').childNodes[3].style.stroke);
+            }
     </script>
 </body>
 

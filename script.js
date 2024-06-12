@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('#theme-toggle i').classList.replace('fa-sun', 'fa-moon');
         document.getElementById('theme-text').textContent = 'Modo Escuro';
         textElement.style.stroke = 'white';
+        isDarkMode();
     } else {
         document.body.classList.add('light-mode');
         document.querySelector('#theme-toggle i').classList.replace('fa-moon', 'fa-sun');
@@ -74,11 +75,24 @@ document.addEventListener('DOMContentLoaded', function () {
             duration: 3,
             ease: "power2.inOut",
             onComplete: () => {
-                gsap.to(textElement, { fillOpacity: 1, duration: 0.5, onComplete: () => {
-                    gsap.to(textElement, { fillOpacity: 0, duration: 0.5, onComplete: () => {
-                        gsap.to(textElement, { strokeDashoffset: length, duration: 3, ease: "power2.inOut", onComplete: animateText });
-                    }});
-                }});
+                gsap.to(textElement, {
+                    fillOpacity: 1,
+                    duration: 0.5,
+                    onComplete: () => {
+                        gsap.to(textElement, {
+                            fillOpacity: 0,
+                            duration: 0.5,
+                            onComplete: () => {
+                                gsap.to(textElement, {
+                                    strokeDashoffset: length,
+                                    duration: 3,
+                                    ease: "power2.inOut",
+                                    onComplete: animateText
+                                });
+                            }
+                        });
+                    }
+                });
             }
         });
     }
@@ -87,39 +101,42 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Abrir modal ao clicar no ícone de telefone
-document.getElementById('contact-icon').addEventListener('click', function() {
+document.getElementById('contact-icon').addEventListener('click', function () {
     document.getElementById('contact-modal').style.display = 'block';
 });
 
 // Fechar modal ao clicar no botão 'X'
-document.getElementsByClassName('close')[0].addEventListener('click', function() {
+document.getElementsByClassName('close')[0].addEventListener('click', function () {
     document.getElementById('contact-modal').style.display = 'none';
 });
 
 // Copiar telefone ao clicar no botão 'Copiar' dentro do modal
-document.getElementById('copy-phone').addEventListener('click', function() {
+document.getElementById('copy-phone').addEventListener('click', function () {
     var phone = document.getElementById('phone').innerText;
     navigator.clipboard.writeText(phone);
     alert('Telefone copiado: ' + phone);
 });
 
 // Copiar email ao clicar no botão 'Copiar' dentro do modal
-document.getElementById('copy-email').addEventListener('click', function() {
+document.getElementById('copy-email').addEventListener('click', function () {
     var email = document.getElementById('email').innerText;
     navigator.clipboard.writeText(email);
     alert('Email copiado: ' + email);
 });
 
 // Abrir modal ao clicar no ícone de telefone no footer
-document.getElementById('footer-contact-icon').addEventListener('click', function() {
+document.getElementById('footer-contact-icon').addEventListener('click', function () {
     // Simular clique no ícone de telefone no header
     document.getElementById('contact-icon').click();
     // Subir a página suavemente para visualizar o modal
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
 
 // Alternar modo escuro
-document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+document.getElementById('dark-mode-toggle').addEventListener('click', function () {
     document.body.classList.toggle('dark-mode');
 });
 
@@ -131,3 +148,11 @@ function switchLanguage(lang) {
         element.textContent = translations[lang][key];
     });
 }
+
+function isDarkMode() {
+    if(document.querySelector('.dark-mode')){
+        document.getElementById('svg-animation').childNodes[3].style.stroke = "white"
+        console.log(document.getElementById('svg-animation').childNodes[3].style.stroke);
+    }
+}
+isDarkMode() ;
