@@ -1,4 +1,50 @@
-document.addEventListener('DOMContentLoaded', function() {
+function toggleTheme() {
+    const body = document.body;
+    const themeToggle = document.getElementById('theme-toggle');
+    const icon = themeToggle.querySelector('i');
+    const text = document.getElementById('theme-text');
+    const textElement = document.querySelector('#svg-animation text');
+
+    if (body.classList.contains('dark-mode')) {
+        body.classList.replace('dark-mode', 'light-mode');
+        icon.classList.replace('fa-moon', 'fa-sun');
+        text.textContent = 'Modo Claro';
+        textElement.style.stroke = 'black'; // Mudar cor da animação para preto no modo claro
+        localStorage.setItem('theme', 'light'); // Salvar preferência do tema
+    } else {
+        body.classList.replace('light-mode', 'dark-mode');
+        icon.classList.replace('fa-sun', 'fa-moon');
+        text.textContent = 'Modo Escuro';
+        textElement.style.stroke = 'white'; // Mudar cor da animação para branco no modo escuro
+        localStorage.setItem('theme', 'dark'); // Salvar preferência do tema
+    }
+}
+
+document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
+// Inicialização do tema com base na preferência do sistema ou tema salvo
+document.addEventListener('DOMContentLoaded', function () {
+    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storedTheme = localStorage.getItem('theme');
+    const textElement = document.querySelector('#svg-animation text');
+
+    if (storedTheme === 'dark' || (storedTheme !== 'light' && userPrefersDark)) {
+        document.body.classList.add('dark-mode');
+        document.querySelector('#theme-toggle i').classList.replace('fa-sun', 'fa-moon');
+        document.getElementById('theme-text').textContent = 'Modo Escuro';
+        textElement.style.stroke = 'white';
+    } else {
+        document.body.classList.add('light-mode');
+        document.querySelector('#theme-toggle i').classList.replace('fa-moon', 'fa-sun');
+        document.getElementById('theme-text').textContent = 'Modo Claro';
+        textElement.style.stroke = 'black';
+    }
+});
+// Configuração inicial para o tema claro
+document.addEventListener('DOMContentLoaded', function () {
+    document.body.classList.add('light-mode');
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
     const svgNS = "http://www.w3.org/2000/svg";
     const svg = document.getElementById("svg-animation");
     const text = "Front-end Developer";
@@ -64,7 +110,6 @@ document.getElementById('copy-email').addEventListener('click', function() {
     alert('Email copiado: ' + email);
 });
 
-
 // Abrir modal ao clicar no ícone de telefone no footer
 document.getElementById('footer-contact-icon').addEventListener('click', function() {
     // Simular clique no ícone de telefone no header
@@ -72,3 +117,17 @@ document.getElementById('footer-contact-icon').addEventListener('click', functio
     // Subir a página suavemente para visualizar o modal
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// Alternar modo escuro
+document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+});
+
+// Função para alternar idiomas
+function switchLanguage(lang) {
+    const elements = document.querySelectorAll('[data-lang]');
+    elements.forEach(element => {
+        const key = element.getAttribute('data-lang');
+        element.textContent = translations[lang][key];
+    });
+}

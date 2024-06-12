@@ -1,15 +1,17 @@
-/* Mobile First Styles */
+/* Estilos gerais */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     line-height: 1.6;
+    background-color: #fff;
+    color: #333;
 }
 
 a {
     text-decoration: none;
-    color: #333;
+    color: inherit;
 }
 
 header {
@@ -17,6 +19,9 @@ header {
     color: white;
     padding: 1rem;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav h1 {
@@ -72,9 +77,10 @@ nav h1 {
 }
 
 .projects a li p {
-    font-weight: 300
+    font-weight: 300;
 }
-.social-icons{
+
+.social-icons {
     display: flex;
     text-decoration: none;
     list-style: none;
@@ -83,10 +89,12 @@ nav h1 {
     margin: 0 auto;
     gap: 10px;
 }
+
 i {
     color: #FFF;
 }
-li img{
+
+li img {
     height: 12px;
 }
 
@@ -99,20 +107,22 @@ footer {
 
 .projects a:hover li {
     color: #FFF;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     background-color: rgb(3, 3, 3);
 }
 
 /* Estilos para os itens da competência */
 .skills li {
     margin-bottom: 10px;
-    transition: all 0.2s ease; /* Transição suave */
+    transition: all 0.2s ease;
+    /* Transição suave */
 }
 
 /* Efeito de hover */
 .skills li:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Sombra ao passar o mouse */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
     font-weight: 700;
 }
 
@@ -135,7 +145,9 @@ footer {
     border: 1px solid #888;
     width: 80%;
 }
-.modal-content, .modal-content  i{
+
+.modal-content,
+.modal-content i {
     color: #333;
 }
 
@@ -155,23 +167,155 @@ footer {
 
 /* Icones */
 .vue-icon {
-    color: #42b883; /* Cor do Vue.js */
+    color: #42b883;
+    /* Cor do Vue.js */
 }
 
 .html-icon {
-    color: #f06529; /* Cor do HTML5 */
+    color: #f06529;
+    /* Cor do HTML5 */
 }
 
 .css-icon {
-    color: #2965f1; /* Cor do CSS3 */
+    color: #2965f1;
+    /* Cor do CSS3 */
 }
 
 .js-icon {
-    color: #f0db4f; /* Cor do JavaScript */
+    color: #f0db4f;
+    /* Cor do JavaScript */
 }
 
 .react-icon {
-    color: #61dbfb; /* Cor do React */
+    color: #61dbfb;
+    /* Cor do React */
+}
+
+.header-controls {
+    position: fixed;
+    top: 0;
+    right: 20px;
+    display: flex;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.header-controls #theme-toggle {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Modo escuro */
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+
+body.dark-mode .profile-photo {
+    border: 2px solid #333;
+}
+
+body.dark-mode .projects li,
+body.dark-mode .skills li {
+    background: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .projects a li,
+body.dark-mode .projects a li:hover {
+    color: #e0e0e0;
+}
+
+body.dark-mode .social-icons i {
+    color: #e0e0e0;
+}
+
+.dark-mode .hero,
+#theme-toggle {
+    background-color: #000;
+    color: white;
+}
+
+
+.hero.dark-mode text {
+    stroke: white;
+}
+
+.hero.light-mode text {
+    stroke: black;
+}
+
+.light-mode .modal-content button {
+    color: black;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.dark-mode .modal-content button {
+    color: white;
+    background-color: #333;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.dark-mode .modal-content {
+    color: white;
+    background-color: #333;
+    border: none;
+}
+
+/* Estilos para o seletor de idioma */
+.language-switcher {
+    display: flex;
+    gap: 10px;
+}
+
+.language-switcher img {
+    height: 12px;
+}
+
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 86px;
+    left: 14px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.gtranslate_wrapper {
+    margin-top: 2em;
+    position: fixed;
+    top: 50px;
+    right: 7px;
+    z-index: 1000;
 }
 
 /* Tablet Styles */
@@ -207,7 +351,31 @@ footer {
 
     .flex-col p {
         display: flex;
-    align-items: center;
+        align-items: center;
+    }
+
+    /* Estilos para o seletor de idioma */
+    .gtranslate_wrapper {
+        position: fixed;
+        top: 60px;
+        /* Ajuste conforme necessário */
+        right: 20px;
+        z-index: 1000;
+        margin-top:0
+    }
+
+    #theme-toggle {
+        position: fixed;
+        left: auto;
+        top: 30px;
+        right: 21px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        z-index: 1000;
     }
 }
 
