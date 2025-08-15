@@ -84,7 +84,8 @@ nav h1 {
     display: flex;
     text-decoration: none;
     list-style: none;
-    justify-content: space-evenly;;
+    justify-content: center;
+    gap: 20px;
     padding: 0;
     margin: 0 auto;
 }
