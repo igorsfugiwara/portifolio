@@ -1,6 +1,6 @@
 .header {
   max-width: 1200px;
-  padding: 40px 20px;
+  padding: 20px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -31,7 +31,7 @@
 @media (max-width: 800px) {
   .header {
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     padding: 20px;
   }
   .header a {
