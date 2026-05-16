@@ -67,8 +67,8 @@ const projectsPt: ProjectData[] = [
     badgeType: 'ai',
     featured: true,
     description:
-      'E-commerce completo para uma ótica premium em São Paulo. Chatbot com RAG que responde usando dados reais do Firestore, painel CMS com Firebase Auth, gestão de estoque em tempo real e aniversários de clientes automatizados.',
-    stack: ['React', 'TypeScript', 'Firebase', 'Gemini API', 'RAG', 'Vercel'],
+      'E-commerce completo para uma ótica premium em São Paulo. Chatbot com RAG e busca semântica por embeddings, function calling para adicionar ao carrinho por linguagem natural, consultoria de harmonização de armações com formato de rosto, painel CMS com Firebase Auth e gestão de estoque em tempo real.',
+    stack: ['React', 'TypeScript', 'Firebase', 'Gemini API', 'RAG', 'Embeddings', 'Function Calling', 'Vercel'],
     link: 'https://oticaroland.vercel.app',
   },
   {
@@ -94,17 +94,17 @@ const projectsPt: ProjectData[] = [
     badge: 'CMS',
     badgeType: 'cms',
     description:
-      'CMS com painel admin para uma banda de hardcore. Reordenação por drag, upload de imagem e rotas protegidas.',
-    stack: ['React', 'TypeScript', 'SCSS'],
+      'CMS com painel admin para uma banda de hardcore. Firebase Auth real com login por email e Google, reordenação por drag, rotas protegidas e sync em tempo real via Firebase RTDB.',
+    stack: ['React', 'TypeScript', 'Firebase', 'RTDB', 'SCSS'],
     link: 'https://linktree-escombro.vercel.app',
   },
   {
     name: 'Del Mastro',
-    badge: 'SEO',
-    badgeType: 'seo',
+    badge: 'Next.js',
+    badgeType: 'cms',
     description:
-      'Landing page responsiva e otimizada para SEO para um restaurante.',
-    stack: ['HTML5', 'CSS3', 'JavaScript'],
+      'Site institucional moderno para restaurante italiano na Av. Paulista. Desenvolvido em Next.js 14 com App Router, SSR para SEO, next/image para otimização de fotos dos pratos e design sofisticado com Tailwind CSS.',
+    stack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'SSR', 'Netlify'],
     link: 'https://delmastrosp.netlify.app',
   },
 ];
@@ -116,8 +116,8 @@ const projectsEn: ProjectData[] = [
     badgeType: 'ai',
     featured: true,
     description:
-      'Full-stack e-commerce for a premium optical store in São Paulo. RAG-powered chatbot using real Firestore data, CMS admin panel with Firebase Auth, real-time inventory and automated customer birthday notifications.',
-    stack: ['React', 'TypeScript', 'Firebase', 'Gemini API', 'RAG', 'Vercel'],
+      'Full-stack e-commerce for a premium optical store in São Paulo. RAG chatbot with semantic search via embeddings, function calling to add products to cart via natural language, face shape harmonization consulting, CMS admin panel with Firebase Auth and real-time inventory management.',
+    stack: ['React', 'TypeScript', 'Firebase', 'Gemini API', 'RAG', 'Embeddings', 'Function Calling', 'Vercel'],
     link: 'https://oticaroland.vercel.app',
   },
   {
@@ -143,17 +143,17 @@ const projectsEn: ProjectData[] = [
     badge: 'CMS',
     badgeType: 'cms',
     description:
-      'Custom CMS with admin panel for a hardcore band. Drag-to-reorder, image upload and protected routes.',
-    stack: ['React', 'TypeScript', 'SCSS'],
+      'Custom CMS with admin panel for a hardcore band. Firebase Auth with email and Google login, drag-to-reorder, protected routes and real-time sync via Firebase RTDB.',
+    stack: ['React', 'TypeScript', 'Firebase', 'RTDB', 'SCSS'],
     link: 'https://linktree-escombro.vercel.app',
   },
   {
     name: 'Del Mastro',
-    badge: 'SEO',
-    badgeType: 'seo',
+    badge: 'Next.js',
+    badgeType: 'cms',
     description:
-      'SEO-optimized responsive landing page for a restaurant.',
-    stack: ['HTML5', 'CSS3', 'JavaScript'],
+      'Modern institutional website for an Italian restaurant on Av. Paulista. Built with Next.js 14 App Router, SSR for SEO, next/image for dish photo optimization and sophisticated design with Tailwind CSS.',
+    stack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'SSR', 'Netlify'],
     link: 'https://delmastrosp.netlify.app',
   },
 ];
@@ -289,7 +289,7 @@ export const contactLinks = {
 };
 
 export const skills = {
-  frontend: ['React', 'TypeScript', 'Vue.js', 'Next.js', 'SCSS'],
-  ai: ['Gemini API', 'Firebase', 'RAG', 'Prompt Engineering'],
-  tools: ['Vite', 'Git', 'Vercel', 'n8n', 'Sanity.io'],
+  frontend: ['React', 'Next.js 14', 'TypeScript', 'Vue.js', 'SCSS', 'Tailwind CSS'],
+  ai: ['Gemini API', 'RAG', 'Embeddings', 'Function Calling', 'Prompt Engineering', 'LLMs'],
+  tools: ['Firebase', 'Vite', 'Git', 'Vercel', 'Netlify', 'Cloudinary', 'n8n'],
 };
