@@ -107,6 +107,24 @@ const projectsPt: ProjectData[] = [
     stack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'SSR', 'Netlify'],
     link: 'https://delmastrosp.netlify.app',
   },
+  {
+    name: 'gamezzz one',
+    badge: 'Game Platform',
+    badgeType: 'api',
+    description:
+      'Plataforma de jogos clássicos e originais que rodam 100% no browser — sem download, sem cadastro. Inclui Pong, Catan e PokéTrunfo com 900+ Pokémon reais via PokéAPI.',
+    stack: ['Next.js 14', 'TypeScript', 'HTML5 Canvas', 'SCSS', 'PokéAPI', 'Vercel'],
+    link: 'https://gamezzz-one.vercel.app',
+  },
+  {
+    name: 'Catan',
+    badge: '3D Browser Game',
+    badgeType: 'realtime',
+    description:
+      'Implementação web do Catan com renderização 3D via Three.js. Tabuleiro hexagonal gerado proceduralmente, 1 jogador humano vs 3 NPCs com dificuldades configuráveis, sistema completo de cartas de desenvolvimento, portos, negociação e condição de vitória.',
+    stack: ['Three.js', 'TypeScript', 'Vite', 'JavaScript ES Modules', 'Netlify'],
+    link: 'https://mery-catan.netlify.app/',
+  },
 ];
 
 const projectsEn: ProjectData[] = [
@@ -155,6 +173,24 @@ const projectsEn: ProjectData[] = [
       'Modern institutional website for an Italian restaurant on Av. Paulista. Built with Next.js 14 App Router, SSR for SEO, next/image for dish photo optimization and sophisticated design with Tailwind CSS.',
     stack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'SSR', 'Netlify'],
     link: 'https://delmastrosp.netlify.app',
+  },
+  {
+    name: 'gamezzz one',
+    badge: 'Game Platform',
+    badgeType: 'api',
+    description:
+      'Browser-based game platform with classic and original games — no download, no sign-up. Includes Pong, Catan and PokéTrunfo with 900+ real Pokémon via PokéAPI.',
+    stack: ['Next.js 14', 'TypeScript', 'HTML5 Canvas', 'SCSS', 'PokéAPI', 'Vercel'],
+    link: 'https://gamezzz-one.vercel.app',
+  },
+  {
+    name: 'Catan',
+    badge: '3D Browser Game',
+    badgeType: 'realtime',
+    description:
+      'Web implementation of Catan with 3D rendering via Three.js. Procedurally generated hexagonal board, 1 human player vs 3 configurable-difficulty NPCs, full development card system, ports, trading and victory condition.',
+    stack: ['Three.js', 'TypeScript', 'Vite', 'JavaScript ES Modules', 'Netlify'],
+    link: 'https://mery-catan.netlify.app/',
   },
 ];
 
