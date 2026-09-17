@@ -14,7 +14,11 @@ export default function Projects() {
 
         {/* Featured project — Ótica Roland */}
         {featured && (
-          <ProjectCard project={featured} visitLabel={t.projects.visitLabel} />
+          <ProjectCard
+            project={featured}
+            visitLabel={t.projects.visitLabel}
+            caseStudyLabel={t.projects.caseStudyLabel}
+          />
         )}
 
         {/* Other projects */}
@@ -24,6 +28,7 @@ export default function Projects() {
               key={project.name}
               project={project}
               visitLabel={t.projects.visitLabel}
+              caseStudyLabel={t.projects.caseStudyLabel}
             />
           ))}
         </div>

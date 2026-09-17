@@ -5,9 +5,14 @@ export interface ProjectData {
   badge: string;
   description: string;
   stack: string[];
-  link: string;
+  /** Ausente quando o projeto não tem demo pública (ex.: sistema financeiro em produção) */
+  link?: string;
   featured?: boolean;
   badgeType?: 'ai' | 'realtime' | 'api' | 'cms' | 'seo';
+  /** Página de estudo de caso dentro do próprio portfólio (rota interna) */
+  caseStudy?: string;
+  /** Texto curto no lugar do link, quando não há demo pública */
+  privateNote?: string;
 }
 
 export interface ExperienceData {
@@ -44,6 +49,7 @@ export interface Translations {
   projects: {
     title: string;
     visitLabel: string;
+    caseStudyLabel: string;
     items: ProjectData[];
   };
   experience: {
@@ -70,6 +76,44 @@ const projectsPt: ProjectData[] = [
       'E-commerce completo para uma ótica premium em São Paulo. Chatbot com RAG e busca semântica por embeddings, function calling para adicionar ao carrinho por linguagem natural, consultoria de harmonização de armações com formato de rosto, painel CMS com Firebase Auth e gestão de estoque em tempo real.',
     stack: ['React', 'TypeScript', 'Firebase', 'Gemini API', 'RAG', 'Embeddings', 'Function Calling', 'Vercel'],
     link: 'https://oticaroland.vercel.app',
+  },
+  {
+    name: 'Assistente de Casa',
+    badge: 'AI + Realtime',
+    badgeType: 'ai',
+    description:
+      'App de gestão doméstica para duas pessoas: tarefas do dia a dia, cuidados com o cachorro, canteiro do jardim com calendário de rega e listas de compras compartilhadas. Leitura de nota fiscal por IA via API da Claude, sync em tempo real e RLS multiusuário no Supabase, PWA instalável com notificações push.',
+    stack: ['React', 'TypeScript', 'Supabase', 'Realtime', 'Claude API', 'PWA', 'Vite', 'Vercel'],
+    link: 'https://assistente-de-casa.vercel.app',
+    caseStudy: '/assistente-de-casa',
+  },
+  {
+    name: 'PDV Casa Ó',
+    badge: 'Sistema em produção',
+    badgeType: 'realtime',
+    description:
+      'Ponto de venda de um bar em São Paulo, usado todo dia de funcionamento. Comandas sincronizadas em tempo real entre celular e balcão, oito formas de pagamento (incluindo misto e fiado), estoque com custo médio ponderado calculado em transação, caixa com sangria e suprimento, e relatório com faturamento, CMV e log de auditoria.',
+    stack: ['Vue 3', 'TypeScript', 'Pinia', 'Firebase', 'Firestore', 'SCSS', 'Vite'],
+    caseStudy: '/pdv-casa-o',
+    privateNote: 'Sem demo pública — sistema financeiro',
+  },
+  {
+    name: 'Get Lawyer',
+    badge: 'AI-Powered',
+    badgeType: 'ai',
+    description:
+      'Marketplace jurídico que liga cliente e advogado por triagem de IA: um chat com Gemini entende o caso, classifica a área do direito e mede a urgência antes de encaminhar. Busca por estado e especialidade, painel de oportunidades para o advogado, chat em tempo real, avaliação pós-atendimento, fórum moderado e área administrativa.',
+    stack: ['React 18', 'TypeScript', 'Firebase', 'Firestore', 'Gemini API', 'Tailwind CSS', 'Vercel'],
+    link: 'https://get-lawer.vercel.app',
+  },
+  {
+    name: 'Escombro — Site Oficial',
+    badge: 'Band Site',
+    badgeType: 'cms',
+    description:
+      'Site oficial de uma banda de hardcore: shows, imprensa, contato e política de privacidade. Conteúdo vive no Firestore e é editado por um painel admin protegido — show com data passada vai sozinho para o fim da lista, riscado.',
+    stack: ['React', 'TypeScript', 'Firebase', 'Firestore', 'React Router', 'Vercel'],
+    link: 'https://escombro.vercel.app',
   },
   {
     name: 'Retrospectiva',
@@ -137,6 +181,44 @@ const projectsEn: ProjectData[] = [
       'Full-stack e-commerce for a premium optical store in São Paulo. RAG chatbot with semantic search via embeddings, function calling to add products to cart via natural language, face shape harmonization consulting, CMS admin panel with Firebase Auth and real-time inventory management.',
     stack: ['React', 'TypeScript', 'Firebase', 'Gemini API', 'RAG', 'Embeddings', 'Function Calling', 'Vercel'],
     link: 'https://oticaroland.vercel.app',
+  },
+  {
+    name: 'Assistente de Casa',
+    badge: 'AI + Realtime',
+    badgeType: 'ai',
+    description:
+      'Full-stack home management app for two people: daily tasks, dog care, a garden bed with a watering schedule, and shared shopping lists. AI-powered receipt reading via the Claude API, real-time sync with multi-user RLS on Supabase, installable PWA with push notifications.',
+    stack: ['React', 'TypeScript', 'Supabase', 'Realtime', 'Claude API', 'PWA', 'Vite', 'Vercel'],
+    link: 'https://assistente-de-casa.vercel.app',
+    caseStudy: '/assistente-de-casa',
+  },
+  {
+    name: 'PDV Casa Ó',
+    badge: 'Production system',
+    badgeType: 'realtime',
+    description:
+      'Point-of-sale system for a bar in São Paulo, used every night it opens. Tabs synced in real time between phone and counter, eight payment methods (split and store credit included), stock with weighted average cost computed inside a transaction, cash drawer with drops and top-ups, and reports with revenue, COGS and an audit log.',
+    stack: ['Vue 3', 'TypeScript', 'Pinia', 'Firebase', 'Firestore', 'SCSS', 'Vite'],
+    caseStudy: '/pdv-casa-o',
+    privateNote: 'No public demo — financial system',
+  },
+  {
+    name: 'Get Lawyer',
+    badge: 'AI-Powered',
+    badgeType: 'ai',
+    description:
+      'Legal marketplace connecting clients and lawyers through AI triage: a Gemini-powered chat understands the case, classifies the area of law and rates urgency before routing it. Search by state and specialty, opportunity dashboard for lawyers, real-time chat, post-service review, moderated forum and admin area.',
+    stack: ['React 18', 'TypeScript', 'Firebase', 'Firestore', 'Gemini API', 'Tailwind CSS', 'Vercel'],
+    link: 'https://get-lawer.vercel.app',
+  },
+  {
+    name: 'Escombro — Official Site',
+    badge: 'Band Site',
+    badgeType: 'cms',
+    description:
+      'Official website for a hardcore band: shows, press, contact and privacy policy. Content lives in Firestore and is edited through a protected admin panel — a show whose date has passed moves itself to the bottom of the list, struck through.',
+    stack: ['React', 'TypeScript', 'Firebase', 'Firestore', 'React Router', 'Vercel'],
+    link: 'https://escombro.vercel.app',
   },
   {
     name: 'Retrospectiva',
@@ -222,6 +304,7 @@ export const translations: Record<Language, Translations> = {
     projects: {
       title: 'Projetos',
       visitLabel: 'Visitar projeto',
+      caseStudyLabel: 'Ver por dentro',
       items: projectsPt,
     },
     experience: {
@@ -282,6 +365,7 @@ export const translations: Record<Language, Translations> = {
     projects: {
       title: 'Projects',
       visitLabel: 'Visit project',
+      caseStudyLabel: 'Look inside',
       items: projectsEn,
     },
     experience: {
@@ -325,7 +409,7 @@ export const contactLinks = {
 };
 
 export const skills = {
-  frontend: ['React', 'Next.js 14', 'TypeScript', 'Vue.js', 'SCSS', 'Tailwind CSS'],
-  ai: ['Gemini API', 'RAG', 'Embeddings', 'Function Calling', 'Prompt Engineering', 'LLMs'],
-  tools: ['Firebase', 'Vite', 'Git', 'Vercel', 'Netlify', 'Cloudinary', 'n8n'],
+  frontend: ['React', 'Next.js 14', 'TypeScript', 'Vue.js', 'SCSS', 'Tailwind CSS', 'PWA'],
+  ai: ['Claude API', 'Gemini API', 'RAG', 'Embeddings', 'Function Calling', 'Prompt Engineering', 'LLMs'],
+  tools: ['Firebase', 'Supabase', 'PostgreSQL', 'Vite', 'Git', 'Vercel', 'Netlify', 'Cloudinary', 'n8n'],
 };

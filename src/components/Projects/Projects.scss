@@ -169,6 +169,14 @@
     color: var(--text-muted);
   }
 
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.5rem;
+    margin-top: auto;
+  }
+
   &__link {
     display: inline-flex;
     align-items: center;
@@ -176,7 +184,6 @@
     font-size: 0.88rem;
     font-weight: 600;
     color: var(--accent);
-    margin-top: auto;
     width: fit-content;
     transition: gap var(--transition), opacity var(--transition);
 
@@ -184,5 +191,25 @@
       gap: 0.65rem;
       opacity: 0.85;
     }
+
+    // Estudo de caso: mesma âncora, peso menor que o link do app ao vivo
+    &--secondary {
+      color: var(--text-secondary);
+
+      &:hover {
+        color: var(--text-primary);
+        opacity: 1;
+      }
+    }
+  }
+
+  // No lugar do link, quando o projeto não tem demo pública
+  &__private {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-muted);
   }
 }
