@@ -25,14 +25,30 @@
 }
 
 // Reveal ao scroll (Intersection Observer)
+//
+// Por padrão o conteúdo é visível: quem esconde é a classe reveal-ready, posta
+// no <html> pelo hook useReveal. Assim, se o JS não rodar, nada some da página.
 .reveal {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-ready .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+}
 
-  &--active {
+.reveal-ready .reveal.reveal--active,
+.reveal--active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-ready .reveal {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
+    transition: none;
   }
 }
 

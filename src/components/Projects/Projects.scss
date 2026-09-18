@@ -7,6 +7,9 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
     margin-top: 1.5rem;
+    /* Cada card tem a altura do próprio conteúdo. Esticando, os de texto curto
+       ficavam com um vão no meio, que era o branco no meio dos projetos. */
+    align-items: start;
 
     @include mobile {
       grid-template-columns: 1fr;
@@ -74,18 +77,30 @@
     padding: 2.25rem;
     margin-bottom: 1.5rem;
 
+    /* Em telas largas vira duas colunas: o texto à esquerda tem largura de
+       leitura confortável e a stack ocupa a direita, que antes ficava vazia. */
     @include desktop {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
+      grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
+      grid-template-areas:
+        'cabecalho stack'
+        'nome      stack'
+        'descricao stack'
+        'links     stack';
+      align-content: start;
+      column-gap: 3rem;
+      row-gap: 1.25rem;
 
-      .project-card__name {
-        font-size: 1.75rem;
-      }
+      .project-card__header { grid-area: cabecalho; }
+      .project-card__name   { grid-area: nome; font-size: 1.75rem; }
+      .project-card__desc   { grid-area: descricao; font-size: 1rem; }
+      .project-card__links  { grid-area: links; }
 
-      .project-card__desc {
-        font-size: 1rem;
-        max-width: 680px;
+      .project-card__stack {
+        grid-area: stack;
+        align-content: start;
+        padding-left: 3rem;
+        border-left: 1px solid var(--border);
       }
     }
 

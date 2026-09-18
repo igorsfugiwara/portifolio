@@ -25,7 +25,7 @@ export default function Projects() {
         <div className="projects__grid reveal-group">
           {rest.map((project) => (
             <ProjectCard
-              key={project.name}
+              key={project.id}
               project={project}
               visitLabel={t.projects.visitLabel}
               caseStudyLabel={t.projects.caseStudyLabel}

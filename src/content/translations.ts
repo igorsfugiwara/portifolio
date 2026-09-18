@@ -1,6 +1,10 @@
 export type Language = 'pt' | 'en';
 
 export interface ProjectData {
+  /** Identificador estável entre idiomas — serve de key no React.
+   *  Sem ele, o nome traduzido muda e o React recria o card, que então fica
+   *  fora do IntersectionObserver e some da tela. */
+  id: string;
   name: string;
   badge: string;
   description: string;
@@ -68,6 +72,7 @@ export interface Translations {
 
 const projectsPt: ProjectData[] = [
   {
+    id: 'otica-roland',
     name: 'Ótica Roland',
     badge: 'AI-Powered',
     badgeType: 'ai',
@@ -78,6 +83,7 @@ const projectsPt: ProjectData[] = [
     link: 'https://oticaroland.vercel.app',
   },
   {
+    id: 'assistente-casa',
     name: 'Assistente de Casa',
     badge: 'AI + Realtime',
     badgeType: 'ai',
@@ -88,6 +94,7 @@ const projectsPt: ProjectData[] = [
     caseStudy: '/assistente-de-casa',
   },
   {
+    id: 'pdv-casa-o',
     name: 'PDV Casa Ó',
     badge: 'Sistema em produção',
     badgeType: 'realtime',
@@ -98,6 +105,7 @@ const projectsPt: ProjectData[] = [
     privateNote: 'Sem demo pública — sistema financeiro',
   },
   {
+    id: 'get-lawyer',
     name: 'Get Lawyer',
     badge: 'AI-Powered',
     badgeType: 'ai',
@@ -107,6 +115,7 @@ const projectsPt: ProjectData[] = [
     link: 'https://get-lawer.vercel.app',
   },
   {
+    id: 'escombro-site',
     name: 'Escombro — Site Oficial',
     badge: 'Band Site',
     badgeType: 'cms',
@@ -116,6 +125,7 @@ const projectsPt: ProjectData[] = [
     link: 'https://escombro.vercel.app',
   },
   {
+    id: 'retrospectiva',
     name: 'Retrospectiva',
     badge: 'Real-time',
     badgeType: 'realtime',
@@ -125,6 +135,7 @@ const projectsPt: ProjectData[] = [
     link: 'https://retro-beta.vercel.app',
   },
   {
+    id: 'poketrunfo',
     name: 'PokéTrunfo',
     badge: 'API Integration',
     badgeType: 'api',
@@ -134,6 +145,7 @@ const projectsPt: ProjectData[] = [
     link: 'https://poke-trunfo.netlify.app',
   },
   {
+    id: 'escombro-linktree',
     name: 'Escombro Linktree CMS',
     badge: 'CMS',
     badgeType: 'cms',
@@ -143,6 +155,7 @@ const projectsPt: ProjectData[] = [
     link: 'https://linktree-escombro.vercel.app',
   },
   {
+    id: 'del-mastro',
     name: 'Del Mastro',
     badge: 'Next.js',
     badgeType: 'cms',
@@ -152,6 +165,7 @@ const projectsPt: ProjectData[] = [
     link: 'https://delmastrosp.netlify.app',
   },
   {
+    id: 'gamezzz-one',
     name: 'gamezzz one',
     badge: 'Game Platform',
     badgeType: 'api',
@@ -161,6 +175,7 @@ const projectsPt: ProjectData[] = [
     link: 'https://gamezzz-one.vercel.app',
   },
   {
+    id: 'catan',
     name: 'Catan',
     badge: '3D Browser Game',
     badgeType: 'realtime',
@@ -173,6 +188,7 @@ const projectsPt: ProjectData[] = [
 
 const projectsEn: ProjectData[] = [
   {
+    id: 'otica-roland',
     name: 'Ótica Roland',
     badge: 'AI-Powered',
     badgeType: 'ai',
@@ -183,6 +199,7 @@ const projectsEn: ProjectData[] = [
     link: 'https://oticaroland.vercel.app',
   },
   {
+    id: 'assistente-casa',
     name: 'Assistente de Casa',
     badge: 'AI + Realtime',
     badgeType: 'ai',
@@ -193,6 +210,7 @@ const projectsEn: ProjectData[] = [
     caseStudy: '/assistente-de-casa',
   },
   {
+    id: 'pdv-casa-o',
     name: 'PDV Casa Ó',
     badge: 'Production system',
     badgeType: 'realtime',
@@ -203,6 +221,7 @@ const projectsEn: ProjectData[] = [
     privateNote: 'No public demo — financial system',
   },
   {
+    id: 'get-lawyer',
     name: 'Get Lawyer',
     badge: 'AI-Powered',
     badgeType: 'ai',
@@ -212,6 +231,7 @@ const projectsEn: ProjectData[] = [
     link: 'https://get-lawer.vercel.app',
   },
   {
+    id: 'escombro-site',
     name: 'Escombro — Official Site',
     badge: 'Band Site',
     badgeType: 'cms',
@@ -221,6 +241,7 @@ const projectsEn: ProjectData[] = [
     link: 'https://escombro.vercel.app',
   },
   {
+    id: 'retrospectiva',
     name: 'Retrospectiva',
     badge: 'Real-time',
     badgeType: 'realtime',
@@ -230,6 +251,7 @@ const projectsEn: ProjectData[] = [
     link: 'https://retro-beta.vercel.app',
   },
   {
+    id: 'poketrunfo',
     name: 'PokéTrunfo',
     badge: 'API Integration',
     badgeType: 'api',
@@ -239,6 +261,7 @@ const projectsEn: ProjectData[] = [
     link: 'https://poke-trunfo.netlify.app',
   },
   {
+    id: 'escombro-linktree',
     name: 'Escombro Linktree CMS',
     badge: 'CMS',
     badgeType: 'cms',
@@ -248,6 +271,7 @@ const projectsEn: ProjectData[] = [
     link: 'https://linktree-escombro.vercel.app',
   },
   {
+    id: 'del-mastro',
     name: 'Del Mastro',
     badge: 'Next.js',
     badgeType: 'cms',
@@ -257,6 +281,7 @@ const projectsEn: ProjectData[] = [
     link: 'https://delmastrosp.netlify.app',
   },
   {
+    id: 'gamezzz-one',
     name: 'gamezzz one',
     badge: 'Game Platform',
     badgeType: 'api',
@@ -266,6 +291,7 @@ const projectsEn: ProjectData[] = [
     link: 'https://gamezzz-one.vercel.app',
   },
   {
+    id: 'catan',
     name: 'Catan',
     badge: '3D Browser Game',
     badgeType: 'realtime',
