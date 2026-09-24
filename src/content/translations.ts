@@ -130,7 +130,7 @@ const projectsPt: ProjectData[] = [
     badge: 'Real-time',
     badgeType: 'realtime',
     description:
-      'Ferramenta colaborativa de retrospectiva SCRUM para squads de engenharia. Sync em tempo real via Firebase.',
+      'Ferramenta colaborativa de retrospectiva SCRUM para squads de engenharia. Cada time tem sua sala; os cards nascem escondidos e são revelados um a um ou por coluna, para ninguém se influenciar antes da hora. Curtir e descurtir com um voto por pessoa, tudo em tempo real via Firestore.',
     stack: ['React', 'Firebase', 'JavaScript'],
     link: 'https://retro-beta.vercel.app',
   },
@@ -140,8 +140,8 @@ const projectsPt: ProjectData[] = [
     badge: 'API Integration',
     badgeType: 'api',
     description:
-      'Jogo de cartas no browser inspirado no Super Trunfo, consumindo a PokeAPI.',
-    stack: ['Vanilla JavaScript', 'HTML5', 'CSS3'],
+      'Jogo de cartas no browser inspirado no Super Trunfo, com Pokémon reais da PokéAPI. Você escolhe o atributo — HP, ataque, defesa ou velocidade — e disputa contra o computador. Mobile first, com a carta do oponente virando em 3D e cores que mudam conforme o tipo do Pokémon.',
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'PokéAPI'],
     link: 'https://poke-trunfo.netlify.app',
   },
   {
@@ -170,7 +170,7 @@ const projectsPt: ProjectData[] = [
     badge: 'Game Platform',
     badgeType: 'api',
     description:
-      'Plataforma de jogos clássicos e originais que rodam 100% no browser — sem download, sem cadastro. Inclui Pong, Catan e PokéTrunfo com 900+ Pokémon reais via PokéAPI.',
+      'Plataforma de jogos clássicos e originais que rodam 100% no browser — sem download, sem cadastro. Xadrez com IA em três níveis, Snake, Memória Rock, Pong, Catan e PokéTrunfo com 900+ Pokémon reais via PokéAPI.',
     stack: ['Next.js 14', 'TypeScript', 'HTML5 Canvas', 'SCSS', 'PokéAPI', 'Vercel'],
     link: 'https://gamezzz-one.vercel.app',
   },
@@ -246,7 +246,7 @@ const projectsEn: ProjectData[] = [
     badge: 'Real-time',
     badgeType: 'realtime',
     description:
-      'Collaborative SCRUM retrospective tool for engineering squads. Real-time sync via Firebase.',
+      'Collaborative SCRUM retrospective tool for engineering squads. Each team gets its own room; cards start hidden and are revealed one by one or per column, so nobody is swayed too early. Like and dislike with one vote per person, all in real time via Firestore.',
     stack: ['React', 'Firebase', 'JavaScript'],
     link: 'https://retro-beta.vercel.app',
   },
@@ -256,8 +256,8 @@ const projectsEn: ProjectData[] = [
     badge: 'API Integration',
     badgeType: 'api',
     description:
-      'Browser card game inspired by Super Trunfo, consuming PokeAPI.',
-    stack: ['Vanilla JavaScript', 'HTML5', 'CSS3'],
+      'Browser card game inspired by Super Trumps, with real Pokémon from PokéAPI. You pick the stat — HP, attack, defense or speed — and battle the computer. Mobile first, with a 3D flip on the opponent’s card and colors that follow each Pokémon’s type.',
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'PokéAPI'],
     link: 'https://poke-trunfo.netlify.app',
   },
   {
@@ -286,7 +286,7 @@ const projectsEn: ProjectData[] = [
     badge: 'Game Platform',
     badgeType: 'api',
     description:
-      'Browser-based game platform with classic and original games — no download, no sign-up. Includes Pong, Catan and PokéTrunfo with 900+ real Pokémon via PokéAPI.',
+      'Browser-based game platform with classic and original games — no download, no sign-up. Chess with a three-level AI, Snake, Rock Memory, Pong, Catan and PokéTrunfo with 900+ real Pokémon via PokéAPI.',
     stack: ['Next.js 14', 'TypeScript', 'HTML5 Canvas', 'SCSS', 'PokéAPI', 'Vercel'],
     link: 'https://gamezzz-one.vercel.app',
   },
