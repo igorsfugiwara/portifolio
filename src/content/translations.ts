@@ -170,7 +170,7 @@ const projectsPt: ProjectData[] = [
     badge: 'Game Platform',
     badgeType: 'api',
     description:
-      'Plataforma de jogos clássicos e originais que rodam 100% no browser — sem download, sem cadastro. Xadrez com IA em três níveis, Snake, Memória Rock, Pong, Catan e PokéTrunfo com 900+ Pokémon reais via PokéAPI.',
+      'Plataforma de jogos clássicos e originais que rodam 100% no browser — sem download, sem cadastro. Xadrez com IA em três níveis, Snake, Memória Rock, Pong, Catan e PokéTrunfo com os 151 Pokémon originais via PokéAPI.',
     stack: ['Next.js 14', 'TypeScript', 'HTML5 Canvas', 'SCSS', 'PokéAPI', 'Vercel'],
     link: 'https://gamezzz-one.vercel.app',
   },
@@ -286,7 +286,7 @@ const projectsEn: ProjectData[] = [
     badge: 'Game Platform',
     badgeType: 'api',
     description:
-      'Browser-based game platform with classic and original games — no download, no sign-up. Chess with a three-level AI, Snake, Rock Memory, Pong, Catan and PokéTrunfo with 900+ real Pokémon via PokéAPI.',
+      'Browser-based game platform with classic and original games — no download, no sign-up. Chess with a three-level AI, Snake, Rock Memory, Pong, Catan and PokéTrunfo with the original 151 Pokémon via PokéAPI.',
     stack: ['Next.js 14', 'TypeScript', 'HTML5 Canvas', 'SCSS', 'PokéAPI', 'Vercel'],
     link: 'https://gamezzz-one.vercel.app',
   },
