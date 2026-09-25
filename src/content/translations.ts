@@ -110,8 +110,8 @@ const projectsPt: ProjectData[] = [
     badge: 'AI-Powered',
     badgeType: 'ai',
     description:
-      'Marketplace jurídico que liga cliente e advogado por triagem de IA: um chat com Gemini entende o caso, classifica a área do direito e mede a urgência antes de encaminhar. Busca por estado e especialidade, painel de oportunidades para o advogado, chat em tempo real, avaliação pós-atendimento, fórum moderado e área administrativa.',
-    stack: ['React 18', 'TypeScript', 'Firebase', 'Firestore', 'Gemini API', 'Tailwind CSS', 'Vercel'],
+      'Marketplace jurídico que liga cliente e advogado por triagem de IA: um chat com Gemini entende o caso, e o Jev (TypeSafe AI) classifica a área do direito e a urgência com confiança calibrada antes de encaminhar — abaixo do limiar, vale a classificação do Gemini. Busca por estado e especialidade, painel de oportunidades para o advogado, chat em tempo real, avaliação pós-atendimento, fórum moderado e área administrativa.',
+    stack: ['React 18', 'TypeScript', 'Firebase', 'Firestore', 'Gemini API', 'Jev (TypeSafe AI)', 'Tailwind CSS', 'Vercel'],
     link: 'https://get-lawer.vercel.app',
   },
   {
@@ -226,8 +226,8 @@ const projectsEn: ProjectData[] = [
     badge: 'AI-Powered',
     badgeType: 'ai',
     description:
-      'Legal marketplace connecting clients and lawyers through AI triage: a Gemini-powered chat understands the case, classifies the area of law and rates urgency before routing it. Search by state and specialty, opportunity dashboard for lawyers, real-time chat, post-service review, moderated forum and admin area.',
-    stack: ['React 18', 'TypeScript', 'Firebase', 'Firestore', 'Gemini API', 'Tailwind CSS', 'Vercel'],
+      'Legal marketplace connecting clients and lawyers through AI triage: a Gemini-powered chat understands the case, and Jev (TypeSafe AI) classifies the area of law and urgency with calibrated confidence before routing it — below the threshold, Gemini’s classification stands. Search by state and specialty, opportunity dashboard for lawyers, real-time chat, post-service review, moderated forum and admin area.',
+    stack: ['React 18', 'TypeScript', 'Firebase', 'Firestore', 'Gemini API', 'Jev (TypeSafe AI)', 'Tailwind CSS', 'Vercel'],
     link: 'https://get-lawer.vercel.app',
   },
   {
@@ -436,6 +436,6 @@ export const contactLinks = {
 
 export const skills = {
   frontend: ['React', 'Next.js 14', 'TypeScript', 'Vue.js', 'SCSS', 'Tailwind CSS', 'PWA'],
-  ai: ['Claude API', 'Gemini API', 'RAG', 'Embeddings', 'Function Calling', 'Prompt Engineering', 'LLMs'],
+  ai: ['Claude API', 'Gemini API', 'Jev (TypeSafe AI)', 'RAG', 'Embeddings', 'Function Calling', 'Prompt Engineering', 'LLMs'],
   tools: ['Firebase', 'Supabase', 'PostgreSQL', 'Vite', 'Git', 'Vercel', 'Netlify', 'Cloudinary', 'n8n'],
 };
