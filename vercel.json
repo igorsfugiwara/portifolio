@@ -1,0 +1,6 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/((?!assistente-de-casa|pdv-casa-o|videos/|assets/|robots.txt|sitemap.xml|.*\\.).*)", "destination": "/index.html" }
+  ]
+}
