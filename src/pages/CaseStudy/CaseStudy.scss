@@ -81,6 +81,53 @@
     }
   }
 
+  // Hero com vídeo: texto à esquerda, vídeo vertical à direita ocupando a
+  // altura da tela (menos a barra de topo). Até tablet, o vídeo desce para
+  // baixo do texto, centralizado.
+  &__hero--video {
+    @include desktop {
+      padding-top: 2rem;
+    }
+  }
+
+  &__hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+
+    @include desktop {
+      .case__hero--video & {
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 4rem;
+      }
+    }
+  }
+
+  &__hero-media {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__video {
+    display: block;
+    aspect-ratio: 9 / 16;
+    width: min(100%, 420px);
+    height: auto;
+    object-fit: cover;
+    background: #000;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 24px 70px var(--shadow);
+
+    @include desktop {
+      width: auto;
+      height: calc(100svh - 64px - 4rem);
+      min-height: 520px;
+      max-height: 920px;
+    }
+  }
+
   &__eyebrow {
     display: flex;
     align-items: center;

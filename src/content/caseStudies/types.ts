@@ -85,4 +85,6 @@ export interface CaseStudyContent {
 export interface CaseStudyLinks {
   live?: string;
   repo?: string;
+  /** Vídeo de apresentação (vertical, 9:16) em /public — aparece ao lado do hero. */
+  video?: string;
 }

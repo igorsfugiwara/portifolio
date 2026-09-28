@@ -2,6 +2,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { useTheme } from '../../context/ThemeContext';
 import { CaseStudyContent, CaseStudyLinks } from '../../content/caseStudies/types';
 import { Language } from '../../content/translations';
+import HeroVideo from './HeroVideo';
 import './CaseStudy.scss';
 
 interface CaseStudyProps {
@@ -68,43 +69,54 @@ export default function CaseStudy({ content, links }: CaseStudyProps) {
 
       <main>
         {/* Hero */}
-        <section className="case__hero">
+        <section className={`case__hero${links.video ? ' case__hero--video' : ''}`}>
           <div className="container">
-            <div className="case__eyebrow animate-slide-up delay-1">
-              <span className="case__dot" />
-              {c.eyebrow}
-            </div>
+            <div className="case__hero-grid">
+              <div className="case__hero-text">
+                <div className="case__eyebrow animate-slide-up delay-1">
+                  <span className="case__dot" />
+                  {c.eyebrow}
+                </div>
 
-            <h1 className="case__title animate-slide-up delay-2">{c.title}</h1>
-            <p className="case__tagline animate-slide-up delay-3">{c.tagline}</p>
-            <p className="case__intro animate-slide-up delay-4">{c.intro}</p>
+                <h1 className="case__title animate-slide-up delay-2">{c.title}</h1>
+                <p className="case__tagline animate-slide-up delay-3">{c.tagline}</p>
+                <p className="case__intro animate-slide-up delay-4">{c.intro}</p>
 
-            {(links.live || links.repo) && (
-              <div className="case__cta animate-slide-up delay-5">
-                {links.live && c.ctaLive && (
-                  <a className="btn btn--primary" href={links.live} target="_blank" rel="noopener noreferrer">
-                    {c.ctaLive}
-                    <ArrowUpRight />
-                  </a>
+                {(links.live || links.repo) && (
+                  <div className="case__cta animate-slide-up delay-5">
+                    {links.live && c.ctaLive && (
+                      <a className="btn btn--primary" href={links.live} target="_blank" rel="noopener noreferrer">
+                        {c.ctaLive}
+                        <ArrowUpRight />
+                      </a>
+                    )}
+                    {links.repo && c.ctaRepo && (
+                      <a className="btn btn--ghost" href={links.repo} target="_blank" rel="noopener noreferrer">
+                        {c.ctaRepo}
+                      </a>
+                    )}
+                  </div>
                 )}
-                {links.repo && c.ctaRepo && (
-                  <a className="btn btn--ghost" href={links.repo} target="_blank" rel="noopener noreferrer">
-                    {c.ctaRepo}
-                  </a>
+
+                {/* Sem link público: explica o porquê em vez de deixar um botão morto */}
+                {c.access && (
+                  <aside className="case__access animate-slide-up delay-5">
+                    <h2 className="case__access-label">
+                      <Lock />
+                      {c.access.label}
+                    </h2>
+                    <p className="case__access-text">{c.access.text}</p>
+                  </aside>
                 )}
               </div>
-            )}
 
-            {/* Sem link público: explica o porquê em vez de deixar um botão morto */}
-            {c.access && (
-              <aside className="case__access animate-slide-up delay-5">
-                <h2 className="case__access-label">
-                  <Lock />
-                  {c.access.label}
-                </h2>
-                <p className="case__access-text">{c.access.text}</p>
-              </aside>
-            )}
+              {/* Vídeo de apresentação: à direita no desktop, abaixo do texto no celular */}
+              {links.video && (
+                <div className="case__hero-media animate-fade-in delay-3">
+                  <HeroVideo src={links.video} label={`${c.title} — ${c.tagline}`} />
+                </div>
+              )}
+            </div>
 
             <dl className="case__stats animate-fade-in delay-6">
               {c.stats.map((stat) => (

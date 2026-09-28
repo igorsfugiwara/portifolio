@@ -381,4 +381,5 @@ export const assistenteCasaContent: Record<Language, CaseStudyContent> = { pt, e
 export const assistenteCasaLinks: CaseStudyLinks = {
   live: 'https://assistente-de-casa.vercel.app',
   repo: 'https://github.com/igorsfugiwara/Assistente-de-Casa',
+  video: '/videos/assistente-de-casa.mp4',
 };

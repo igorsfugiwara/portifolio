@@ -382,4 +382,6 @@ const en: CaseStudyContent = {
 
 export const pdvCasaOContent: Record<Language, CaseStudyContent> = { pt, en };
 
-export const pdvCasaOLinks: CaseStudyLinks = {};
+export const pdvCasaOLinks: CaseStudyLinks = {
+  video: '/videos/pdv-casa-o.mp4',
+};
