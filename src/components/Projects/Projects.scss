@@ -111,6 +111,56 @@
     }
   }
 
+  // Card com vídeo: largura toda, texto à esquerda e o anúncio vertical à
+  // direita. Até tablet, o vídeo desce para baixo do texto.
+  &--video {
+    margin-bottom: 1.5rem;
+    padding: 2rem;
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 3rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .project-card__name { font-size: 1.6rem; }
+    .project-card__desc { font-size: 0.98rem; max-width: 620px; }
+    // Aqui a sobra de altura é do vídeo, não do texto: nada de empurrar a
+    // stack para o pé.
+    .project-card__stack { margin-top: 0.5rem; }
+  }
+
+  &__media {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+
+    @include desktop { margin-top: 0; }
+  }
+
+  &__video {
+    display: block;
+    aspect-ratio: 9 / 16;
+    width: min(100%, 320px);
+    height: auto;
+    object-fit: cover;
+    background: #000;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+
+    @include desktop {
+      width: auto;
+      height: min(560px, 72svh);
+    }
+  }
+
   &__featured-label {
     position: absolute;
     top: -1px;

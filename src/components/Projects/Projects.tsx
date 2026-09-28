@@ -5,6 +5,10 @@ import './Projects.scss';
 export default function Projects() {
   const { t } = useLanguage();
   const [featured, ...rest] = t.projects.items;
+  // Os projetos com vídeo ganham card largo logo abaixo do destaque; o resto
+  // segue na grade.
+  const withVideo = rest.filter((p) => p.video);
+  const grid = rest.filter((p) => !p.video);
 
   return (
     <section className="projects" id="projects">
@@ -21,9 +25,19 @@ export default function Projects() {
           />
         )}
 
+        {/* Projetos com vídeo de apresentação */}
+        {withVideo.map((project) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            visitLabel={t.projects.visitLabel}
+            caseStudyLabel={t.projects.caseStudyLabel}
+          />
+        ))}
+
         {/* Other projects */}
         <div className="projects__grid reveal-group">
-          {rest.map((project) => (
+          {grid.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}

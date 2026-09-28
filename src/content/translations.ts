@@ -9,6 +9,8 @@ export interface ProjectData {
   badge: string;
   description: string;
   stack: string[];
+  /** Anúncio vertical (9:16) em /public; o pôster é o mesmo nome em .jpg. */
+  video?: string;
   /** Ausente quando o projeto não tem demo pública (ex.: sistema financeiro em produção) */
   link?: string;
   featured?: boolean;
@@ -85,6 +87,7 @@ const projectsPt: ProjectData[] = [
   },
   {
     id: 'assistente-casa',
+    video: '/videos/assistente-de-casa.mp4',
     name: 'Assistente de Casa',
     badge: 'AI + Realtime',
     badgeType: 'ai',
@@ -96,6 +99,7 @@ const projectsPt: ProjectData[] = [
   },
   {
     id: 'pdv-casa-o',
+    video: '/videos/pdv-casa-o.mp4',
     name: 'PDV Casa Ó',
     badge: 'Sistema em produção',
     badgeType: 'realtime',
@@ -201,6 +205,7 @@ const projectsEn: ProjectData[] = [
   },
   {
     id: 'assistente-casa',
+    video: '/videos/assistente-de-casa.mp4',
     name: 'Assistente de Casa',
     badge: 'AI + Realtime',
     badgeType: 'ai',
@@ -212,6 +217,7 @@ const projectsEn: ProjectData[] = [
   },
   {
     id: 'pdv-casa-o',
+    video: '/videos/pdv-casa-o.mp4',
     name: 'PDV Casa Ó',
     badge: 'Production system',
     badgeType: 'realtime',

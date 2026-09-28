@@ -1,4 +1,5 @@
 import { ProjectData } from '../../content/translations';
+import PromoVideo from '../PromoVideo/PromoVideo';
 import './Projects.scss';
 
 interface ProjectCardProps {
@@ -18,8 +19,8 @@ const badgeIcons: Record<string, string> = {
 export default function ProjectCard({ project, visitLabel, caseStudyLabel }: ProjectCardProps) {
   const icon = project.badgeType ? badgeIcons[project.badgeType] : '✦';
 
-  return (
-    <article className={`project-card reveal${project.featured ? ' project-card--featured' : ''}`}>
+  const content = (
+    <>
       {project.featured && (
         <div className="project-card__featured-label">Featured Project</div>
       )}
@@ -81,6 +82,34 @@ export default function ProjectCard({ project, visitLabel, caseStudyLabel }: Pro
           </a>
         )}
       </div>
-    </article>
+    </>
   );
+
+  const classes = [
+    'project-card',
+    'reveal',
+    project.featured ? 'project-card--featured' : '',
+    project.video ? 'project-card--video' : '',
+  ].filter(Boolean).join(' ');
+
+  // Com vídeo, o conteúdo vai numa coluna e o anúncio vertical na outra.
+  // Sem vídeo, a estrutura segue a mesma de sempre — o card em destaque
+  // posiciona os filhos diretos no grid dele.
+  if (project.video) {
+    return (
+      <article className={classes}>
+        <div className="project-card__content">{content}</div>
+        <div className="project-card__media">
+          <PromoVideo
+            className="project-card__video"
+            src={project.video}
+            poster={project.video.replace(/\.mp4$/, '.jpg')}
+            label={`${project.name} — ${project.badge}`}
+          />
+        </div>
+      </article>
+    );
+  }
+
+  return <article className={classes}>{content}</article>;
 }

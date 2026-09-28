@@ -2,7 +2,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { useTheme } from '../../context/ThemeContext';
 import { CaseStudyContent, CaseStudyLinks } from '../../content/caseStudies/types';
 import { Language } from '../../content/translations';
-import HeroVideo from './HeroVideo';
+import PromoVideo from '../../components/PromoVideo/PromoVideo';
 import './CaseStudy.scss';
 
 interface CaseStudyProps {
@@ -113,7 +113,12 @@ export default function CaseStudy({ content, links }: CaseStudyProps) {
               {/* Vídeo de apresentação: à direita no desktop, abaixo do texto no celular */}
               {links.video && (
                 <div className="case__hero-media animate-fade-in delay-3">
-                  <HeroVideo src={links.video} label={`${c.title} — ${c.tagline}`} />
+                  <PromoVideo
+                    className="case__video"
+                    src={links.video}
+                    poster={links.video.replace(/\.mp4$/, '.jpg')}
+                    label={`${c.title} — ${c.tagline}`}
+                  />
                 </div>
               )}
             </div>
