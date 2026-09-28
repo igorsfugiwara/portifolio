@@ -7,6 +7,7 @@ import About from './components/About/About';
 import Projects from './components/Projects/Projects';
 import Experience from './components/Experience/Experience';
 import Contact from './components/Contact/Contact';
+import { Language } from './content/translations';
 import './App.scss';
 
 function AppContent() {
@@ -26,10 +27,10 @@ function AppContent() {
   );
 }
 
-export default function App() {
+export default function App({ initialLanguage }: { initialLanguage?: Language }) {
   return (
     <ThemeProvider>
-      <LanguageProvider>
+      <LanguageProvider initialLanguage={initialLanguage}>
         <AppContent />
       </LanguageProvider>
     </ThemeProvider>

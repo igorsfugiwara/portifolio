@@ -16,7 +16,8 @@ import { assistenteCasaContent, assistenteCasaLinks } from './content/caseStudie
 import { pdvCasaOContent, pdvCasaOLinks } from './content/caseStudies/pdvCasaO';
 
 export const pages: Record<string, () => string> = {
-  'index.html': () => renderToString(<App />),
+  'index.html': () => renderToString(<App initialLanguage="en" />),
+  'pt/index.html': () => renderToString(<App initialLanguage="pt" />),
   'assistente-de-casa.html': () =>
     renderToString(
       <ThemeProvider>

@@ -9,7 +9,20 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
 
+// A home tem um endereço por idioma: / (inglês) e /pt/ (português). O
+// endereço manda — é o que o Google vê. Nas outras páginas vale a escolha
+// guardada.
+const isHome = (path: string) => path === '/' || path === '/index.html' || /^\/pt\/?(index\.html)?$/.test(path);
+const languageFromPath = (path: string): Language | null =>
+  /^\/pt(\/|$)/.test(path) ? 'pt' : isHome(path) ? 'en' : null;
+
 function getInitialLanguage(): Language {
+  try {
+    const fromPath = languageFromPath(window.location.pathname);
+    if (fromPath) return fromPath;
+  } catch {
+    // sem window (renderização no build): quem manda é o initialLanguage
+  }
   try {
     const saved = localStorage.getItem('language') as Language | null;
     if (saved === 'pt' || saved === 'en') return saved;
@@ -19,11 +32,20 @@ function getInitialLanguage(): Language {
   return 'en';
 }
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>(getInitialLanguage);
+export function LanguageProvider({ children, initialLanguage }: { children: ReactNode; initialLanguage?: Language }) {
+  const [language, setLanguageState] = useState<Language>(() => initialLanguage ?? getInitialLanguage());
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
+    // Na home, trocar de idioma troca de endereço: recarregar mostra a mesma
+    // língua, e o link copiado leva a quem recebe a versão certa.
+    try {
+      if (isHome(window.location.pathname)) {
+        window.history.replaceState(null, '', (lang === 'pt' ? '/pt/' : '/') + window.location.hash);
+      }
+    } catch {
+      // ignore
+    }
     try {
       localStorage.setItem('language', lang);
     } catch {

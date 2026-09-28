@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://igorfugiwara.netlify.app/</loc><priority>1.0</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://igorfugiwara.netlify.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://igorfugiwara.netlify.app/" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://igorfugiwara.netlify.app/pt/" />
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://igorfugiwara.netlify.app/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://igorfugiwara.netlify.app/" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://igorfugiwara.netlify.app/pt/" />
+    <priority>1.0</priority>
+  </url>
   <url><loc>https://igorfugiwara.netlify.app/assistente-de-casa</loc><priority>0.7</priority></url>
   <url><loc>https://igorfugiwara.netlify.app/pdv-casa-o</loc><priority>0.7</priority></url>
 </urlset>
