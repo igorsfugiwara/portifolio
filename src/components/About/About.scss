@@ -14,6 +14,14 @@
     }
   }
 
+  &__music {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-weight: 600;
+    color: var(--accent);
+    &:hover { text-decoration: underline; }
+  }
+
   &__bio {
     p {
       font-size: 1.1rem;

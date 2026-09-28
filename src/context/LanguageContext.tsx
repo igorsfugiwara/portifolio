@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { Language, Translations, translations } from '../content/translations';
 
 interface LanguageContextType {
@@ -32,6 +32,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   const t = translations[language];
+
+  // O <html lang> acompanha o idioma escolhido: leitor de tela e buscador
+  // leem a página na língua em que ela está.
+  useEffect(() => {
+    document.documentElement.lang = language === 'pt' ? 'pt-BR' : 'en';
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>

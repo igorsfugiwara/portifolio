@@ -43,6 +43,7 @@ export interface Translations {
   about: {
     title: string;
     bio: string;
+    musicLink: string;
     skillsTitle: string;
     categories: {
       frontend: string;
@@ -319,7 +320,8 @@ export const translations: Record<Language, Translations> = {
     },
     about: {
       title: 'Sobre',
-      bio: 'Sou engenheiro de Software em São Paulo, atualmente na UOL — o maior portal de notícias da América Latina. Especializo-me em construir produtos web com IA: de chatbots com RAG a sistemas de gestão em tempo real. Também toco em uma banda de hardcore chamada Escombro.',
+      bio: 'Sou engenheiro de Software em São Paulo, atualmente na UOL — o maior portal de notícias da América Latina. Especializo-me em construir produtos web com IA: de chatbots com RAG a sistemas de gestão em tempo real. Também toco baixo no Escombro, banda de hardcore de São Paulo.',
+      musicLink: 'Meu lado músico: Igor Lingão, baixo do Escombro',
       skillsTitle: 'Stack',
       categories: {
         frontend: 'Frontend',
@@ -341,7 +343,7 @@ export const translations: Record<Language, Translations> = {
           role: 'Software Engineer',
           period: '2022 – presente',
           description:
-            'Desenvolvimento de jogos embed e ferramentas interativas para o maior portal de notícias da América Latina. Padronização de sistemas de componentes reutilizáveis e prompts estruturados para workflows com IA.',
+            'Desenvolvimento de jogos embed e ferramentas interativas para o maior portal de notícias da América Latina. Padronização de sistemas de componentes reutilizáveis e prompts estruturados para workflows com IA. Indicado ao 8º Prêmio UOL de Conteúdo (2026), na categoria Iniciativa inovadora, com "Vibe coding para criar ferramentas".',
           stack: ['Vue.js', 'React', 'Angular', 'TypeScript'],
         },
         {
@@ -380,7 +382,8 @@ export const translations: Record<Language, Translations> = {
     },
     about: {
       title: 'About',
-      bio: "I'm a Software engineer based in São Paulo, currently at UOL — Latin America's largest news portal. I specialize in building AI-powered web products: from RAG chatbots to real-time admin systems. I also play in a hardcore band called Escombro.",
+      bio: "I'm a Software engineer based in São Paulo, currently at UOL — Latin America's largest news portal. I specialize in building AI-powered web products: from RAG chatbots to real-time admin systems. I also play bass in Escombro, a hardcore band from São Paulo.",
+      musicLink: 'My musician side: Igor Lingão, bass in Escombro',
       skillsTitle: 'Stack',
       categories: {
         frontend: 'Frontend',
@@ -402,7 +405,7 @@ export const translations: Record<Language, Translations> = {
           role: 'Software Engineer',
           period: '2022 – present',
           description:
-            'Building embed web games and interactive tools for Latin America\'s largest news portal. Standardizing reusable component systems and crafting structured prompts for AI-assisted development workflows.',
+            'Building embed web games and interactive tools for Latin America\'s largest news portal. Standardizing reusable component systems and crafting structured prompts for AI-assisted development workflows. Nominated for the 8th UOL Content Award (2026), Innovative Initiative category, for "Vibe coding to build tools".',
           stack: ['Vue.js', 'React', 'Angular', 'TypeScript'],
         },
         {
@@ -427,6 +430,10 @@ export const translations: Record<Language, Translations> = {
 };
 
 // Dados de contato (fixos, sem tradução)
+// A página de músico, no site do Escombro — e o outro lado do "Igor Fugiwara"
+// na busca: as duas páginas apontam uma para a outra.
+export const musicianPage = 'https://escombro.vercel.app/integrantes/igor-lingao';
+
 export const contactLinks = {
   email: 'igorsf.dev@gmail.com',
   whatsapp: 'https://wa.me/5511943286969',

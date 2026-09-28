@@ -1,5 +1,5 @@
 import { useLanguage } from '../../context/LanguageContext';
-import { skills } from '../../content/translations';
+import { skills, musicianPage } from '../../content/translations';
 import './About.scss';
 
 export default function About() {
@@ -14,6 +14,9 @@ export default function About() {
         <div className="about__grid">
           <div className="about__bio reveal">
             <p>{t.about.bio}</p>
+            <a className="about__music" href={musicianPage} target="_blank" rel="noopener noreferrer">
+              {t.about.musicLink} →
+            </a>
           </div>
 
           <div className="about__skills">
