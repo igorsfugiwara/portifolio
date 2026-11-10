@@ -19,6 +19,8 @@ export interface ProjectData {
   caseStudy?: string;
   /** Texto curto no lugar do link, quando não há demo pública */
   privateNote?: string;
+  /** Rótulo do link quando ele não é uma demo (ex.: o código no GitHub) */
+  linkLabel?: string;
 }
 
 export interface ExperienceData {
@@ -118,6 +120,17 @@ const projectsPt: ProjectData[] = [
       'Marketplace jurídico que liga cliente e advogado por triagem de IA: um chat com Gemini entende o caso, e o Jev (TypeSafe AI) classifica a área do direito e a urgência com confiança calibrada antes de encaminhar — abaixo do limiar, vale a classificação do Gemini. Busca por estado e especialidade, painel de oportunidades para o advogado, chat em tempo real, avaliação pós-atendimento, fórum moderado e área administrativa.',
     stack: ['React 18', 'TypeScript', 'Firebase', 'Firestore', 'Gemini API', 'Jev (TypeSafe AI)', 'Tailwind CSS', 'Vercel'],
     link: 'https://get-lawer.vercel.app',
+  },
+  {
+    id: 'controle',
+    name: 'Controle',
+    badge: 'Open source · Smart TV',
+    badgeType: 'realtime',
+    description:
+      'Controle remoto universal pelo Wi-Fi, aberto no navegador do celular, sem anúncio e sem conta. Uma ponte em Node na rede de casa acha os aparelhos por SSDP e fala o protocolo de cada um: WebSocket da LG webOS e da Samsung Tizen, XML da LG de 2012, o canal pareado por PIN do app oficial do Fire TV e ADB em projetores Android. Liga a TV por Wake-on-LAN, troca a entrada HDMI, abre apps com o logo oficial e digita no teclado da TV. As chaves de pareamento nunca saem de casa.',
+    stack: ['Node.js', 'WebSocket', 'SSDP', 'ADB', 'Wake-on-LAN', 'JavaScript', 'PWA'],
+    link: 'https://github.com/igorsfugiwara/controle',
+    linkLabel: 'Ver código',
   },
   {
     id: 'escombro-site',
@@ -236,6 +249,17 @@ const projectsEn: ProjectData[] = [
       'Legal marketplace connecting clients and lawyers through AI triage: a Gemini-powered chat understands the case, and Jev (TypeSafe AI) classifies the area of law and urgency with calibrated confidence before routing it — below the threshold, Gemini’s classification stands. Search by state and specialty, opportunity dashboard for lawyers, real-time chat, post-service review, moderated forum and admin area.',
     stack: ['React 18', 'TypeScript', 'Firebase', 'Firestore', 'Gemini API', 'Jev (TypeSafe AI)', 'Tailwind CSS', 'Vercel'],
     link: 'https://get-lawer.vercel.app',
+  },
+  {
+    id: 'controle',
+    name: 'Controle',
+    badge: 'Open source · Smart TV',
+    badgeType: 'realtime',
+    description:
+      'Universal Wi-Fi remote that opens in the phone’s browser, with no ads and no account. A Node bridge on the home network finds devices over SSDP and speaks each one’s protocol: the LG webOS and Samsung Tizen WebSockets, the XML API of 2012 LG sets, the PIN-paired channel of the official Fire TV app, and ADB on Android projectors. It wakes the TV over Wake-on-LAN, switches HDMI inputs, launches apps with their official artwork and types into the TV keyboard. Pairing keys never leave the house.',
+    stack: ['Node.js', 'WebSocket', 'SSDP', 'ADB', 'Wake-on-LAN', 'JavaScript', 'PWA'],
+    link: 'https://github.com/igorsfugiwara/controle',
+    linkLabel: 'View code',
   },
   {
     id: 'escombro-site',

@@ -49,9 +49,9 @@ export default function ProjectCard({ project, visitLabel, caseStudyLabel }: Pro
             target="_blank"
             rel="noopener noreferrer"
             className="project-card__link"
-            aria-label={`${visitLabel}: ${project.name}`}
+            aria-label={`${project.linkLabel ?? visitLabel}: ${project.name}`}
           >
-            {visitLabel}
+            {project.linkLabel ?? visitLabel}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M7 17L17 7M17 7H7M17 7v10" />
             </svg>
