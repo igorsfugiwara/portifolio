@@ -69,7 +69,6 @@ export interface Translations {
     title: string;
     subtitle: string;
     emailLabel: string;
-    whatsappLabel: string;
     linkedinLabel: string;
     githubLabel: string;
   };
@@ -390,7 +389,6 @@ export const translations: Record<Language, Translations> = {
       subtitle:
         'Disponível para projetos freelance e oportunidades em Software e engenharia de IA.',
       emailLabel: 'E-mail',
-      whatsappLabel: 'WhatsApp',
       linkedinLabel: 'LinkedIn',
       githubLabel: 'GitHub',
     },
@@ -452,7 +450,6 @@ export const translations: Record<Language, Translations> = {
       subtitle:
         'Available for freelance projects and opportunities in Software and AI engineering.',
       emailLabel: 'Email',
-      whatsappLabel: 'WhatsApp',
       linkedinLabel: 'LinkedIn',
       githubLabel: 'GitHub',
     },
@@ -466,7 +463,6 @@ export const musicianPage = 'https://escombro.vercel.app/integrantes/igor-lingao
 
 export const contactLinks = {
   email: 'igorsf.dev@gmail.com',
-  whatsapp: 'https://wa.me/5511943286969',
   linkedin: 'https://linkedin.com/in/igor-s-fugiwara-2283b2205',
   github: 'https://github.com/igorsfugiwara',
 };

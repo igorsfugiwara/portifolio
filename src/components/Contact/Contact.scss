@@ -30,6 +30,11 @@
     gap: 1rem;
     margin-bottom: 4rem;
 
+    // O e-mail (contato principal) ocupa a linha toda; LinkedIn e GitHub dividem a de baixo.
+    > :first-child {
+      grid-column: 1 / -1;
+    }
+
     @include mobile {
       grid-template-columns: 1fr;
     }
